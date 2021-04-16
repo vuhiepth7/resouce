@@ -1,38 +1,3 @@
 {
-  "day_update": "15-04-2021",
-  "noti_arrays": [
-    {
-      "time": "15,19",
-      "day_install": "2",
-      "repeat": "every_days",
-      "notification": {
-        "title": "Notification title",
-        "description": "Notification description",
-        "target_class": "com.facebook.adx.Playgame",
-        "meta_data": {
-          "url": "https://google.com"
-        }
-      }
-    },
-    {
-      "time": "9,11",
-      "day_install": "7",
-      "repeat": "one_time",
-      "notification": {
-        "title": "Notification title",
-        "description": "Notification description",
-        "target_class": "com.test.MainActivity"
-      }
-    },
-    {
-      "time": "9,11",
-      "day_install": "0",
-      "repeat": "one_time",
-      "notification": {
-        "title": "Notification title",
-        "description": "Notification description",
-        "target_class": "com.test.MainActivity"
-      }
-    }
-  ]
+  "day_update": "15-04-2021"
 }
