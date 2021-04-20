@@ -1,7 +1,7 @@
 [
     {
         "time": "15,19",
-        "day_install": 0,
+        "day_install": 1,
         "repeat": "every_days",
         "notification":
         {
