@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — CineSurf</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg: #0a0c10;
+      --surface: #12151c;
+      --border: #1e2330;
+      --accent: #e8b24a;
+      --accent-dim: rgba(232,178,74,0.12);
+      --text: #c8cdd8;
+      --text-muted: #5a6070;
+      --heading: #eef0f5;
+      --red: #d94f4f;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10,12,16,0.85);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .logo-icon {
+      width: 34px;
+      height: 34px;
+      background: var(--accent);
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+    }
+
+    .logo-icon svg { width: 18px; height: 18px; }
+
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--heading);
+      letter-spacing: 0.02em;
+    }
+
+    .logo-name span { color: var(--accent); }
+
+    .header-badge {
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      padding: 80px 2rem 60px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%;
+      transform: translateX(-50%);
+      width: 600px; height: 300px;
+      background: radial-gradient(ellipse, rgba(232,178,74,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid rgba(232,178,74,0.25);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.2rem);
+      color: var(--heading);
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-meta {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    .hero-meta strong { color: var(--text); font-weight: 400; }
+
+    /* ── LAYOUT ── */
+    .container {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 2rem 100px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 32px;
+      margin-bottom: 56px;
+    }
+
+    .toc-title {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .toc ol {
+      list-style: none;
+      counter-reset: toc;
+      display: grid;
+      gap: 8px;
+    }
+
+    .toc li {
+      counter-increment: toc;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .toc li::before {
+      content: counter(toc, decimal-leading-zero);
+      font-size: 0.7rem;
+      color: var(--accent);
+      font-weight: 500;
+      font-family: 'DM Sans', monospace;
+      min-width: 26px;
+    }
+
+    .toc a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .toc a:hover { color: var(--accent); }
+
+    /* ── SECTIONS ── */
+    section {
+      margin-bottom: 56px;
+      scroll-margin-top: 80px;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 24px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-num {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--accent);
+      background: var(--accent-dim);
+      border: 1px solid rgba(232,178,74,0.2);
+      border-radius: 6px;
+      padding: 4px 10px;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .section-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.35rem;
+      color: var(--heading);
+      font-weight: 700;
+    }
+
+    p {
+      margin-bottom: 14px;
+      font-size: 0.93rem;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 0 10px 10px 0;
+      padding: 18px 22px;
+      margin: 20px 0;
+      font-size: 0.88rem;
+    }
+
+    .callout.warning {
+      border-left-color: var(--red);
+    }
+
+    /* ── LIST ── */
+    ul.policy-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    ul.policy-list li {
+      display: flex;
+      gap: 12px;
+      font-size: 0.9rem;
+    }
+
+    ul.policy-list li::before {
+      content: '▸';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 40px 2rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    footer strong { color: var(--text); }
+
+    /* ── SCROLL FADE-IN ── */
+    section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    /* Also animate toc */
+    .toc {
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.5s ease 0.1s, transform 0.5s ease 0.1s;
+    }
+    .toc.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <a href="#" class="logo">
+    <div class="logo-icon">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M3 8l1.5-3h15L21 8M3 8v10a1 1 0 001 1h16a1 1 0 001-1V8M3 8h18" stroke="#0a0c10" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="12" cy="13" r="2.5" fill="#0a0c10"/>
+      </svg>
+    </div>
+    <span class="logo-name">Cine<span>Surf</span></span>
+  </a>
+  <span class="header-badge">Legal</span>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-tag">Privacy Policy</div>
+  <h1>Your privacy, <em>our priority.</em></h1>
+  <p class="hero-meta">Last updated: <strong>August 5th, 2026</strong> &nbsp;·&nbsp; Effective immediately</p>
+</div>
+
+<!-- CONTENT -->
+<div class="container">
+
+  <!-- TOC -->
+  <div class="toc">
+    <div class="toc-title">Table of Contents</div>
+    <ol>
+      <li><a href="#s1">Introduction</a></li>
+      <li><a href="#s2">User Accounts</a></li>
+      <li><a href="#s3">User Content</a></li>
+      <li><a href="#s4">Our Services</a></li>
+      <li><a href="#s5">Fees, Payment &amp; Invoice</a></li>
+      <li><a href="#s6">Limitation of Liability</a></li>
+      <li><a href="#s7">Miscellaneous</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Introduction -->
+  <section id="s1">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <h2>Introduction</h2>
+    </div>
+
+    <p>CineSurf — a browser app for discovering and streaming YouTube film content — collects information from you in order to provide better service and give you a better user experience. We always put your privacy as the first consideration, and this Privacy Policy explains how we collect, use, and protect your information.</p>
+
+    <p>Individuals or enterprises (referred to as "You" or "Users") shall thoroughly read this Agreement before using or accessing our Services. While using our Services, You are deemed to have fully understood, accepted, and agreed to abide by all of the following terms and conditions, which become effective immediately. If You disagree in whole or in part, You are entitled to terminate our Services at any time.</p>
+
+    <div class="callout">
+      Questions about this Agreement? Contact our legal team at <a href="mailto:supportdev@gmail.com">supportdev@gmail.com</a>
+    </div>
+
+    <p>We may have other supplementary agreements, such as our Cookie Policy. CineSurf reserves the right to amend this Agreement or related agreements at any time without notice, taking effect immediately. Continued use of our Services after any changes are published is deemed as acceptance of the updated agreements.</p>
+
+    <div class="callout warning">
+      <strong>Age Restriction:</strong> Our Services are not available to persons under the age of 13 (or the minimum legal age in your country). Children may only use CineSurf if services are ordered by their guardian personally, who assumes full responsibility for the child's activity.
+    </div>
+  </section>
+
+  <!-- 2. User Accounts -->
+  <section id="s2">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <h2>User Accounts</h2>
+    </div>
+
+    <p>To use our Services on CineSurf, you will be required to provide the minimum information needed to realize the app's basic functions, such as operating system, unique device identifier, login IP address, software version, connection method, operation logs, and album access permissions. Failure to maintain accurate and up-to-date information may result in inability to use certain services.</p>
+
+    <p>You may never use another User's account without permission. You are solely responsible for all activity that occurs on your account and must keep your password secure. We encourage the use of strong passwords combining uppercase and lowercase letters, numbers, and symbols.</p>
+
+    <p>You agree not to engage in any of the following prohibited activities:</p>
+
+    <ul class="policy-list">
+      <li>Copying, distributing, or disclosing any part of the App in any medium, including automated scraping</li>
+      <li>Using automated systems (robots, spiders, offline readers) to access the App in a way that exceeds normal human usage</li>
+      <li>Transmitting spam, chain letters, or other unsolicited communications</li>
+      <li>Attempting to interfere with or compromise system integrity, security, or transmissions</li>
+      <li>Uploading invalid data, viruses, worms, or other malicious software agents</li>
+      <li>Collecting personally identifiable information, including account names, from the App</li>
+      <li>Impersonating another person, misrepresenting your identity, or conducting fraud</li>
+    </ul>
+
+    <p>If your account is found to have been illegally used, please notify us immediately to avoid unnecessary losses. We may, where permitted by law, ask you to verify your identity, conduct background checks, or screen against third-party databases.</p>
+  </section>
+
+  <!-- 3. User Content -->
+  <section id="s3">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <h2>User Content</h2>
+    </div>
+
+    <p>Any materials a User provides, shares, submits, displays, or creates using CineSurf are considered "User Content." We claim no ownership rights over User Content created by you.</p>
+
+    <p>You agree not to post, store, transmit, or share any User Content that:</p>
+
+    <ul class="policy-list">
+      <li>May create risk of harm, physical or mental injury, death, or disability to any person or animal</li>
+      <li>Seeks to harm or exploit children in any way</li>
+      <li>Constitutes or contributes to a crime or unlawful act</li>
+      <li>Contains information or content that is unlawful, harmful, abusive, ethnically offensive, defamatory, harassing, or otherwise objectionable</li>
+      <li>Discloses insider information, trade secrets, or other confidential content protected by law</li>
+      <li>Infringes the intellectual property or privacy rights of any third party</li>
+    </ul>
+
+    <div class="callout">
+      <strong>Intellectual Property Rights</strong> includes all patent rights, copyright rights, trademark, trade dress, trade secret rights, and all other intellectual property rights as may exist under the laws of any jurisdiction.
+    </div>
+
+    <p>If you use CineSurf for commercial purposes and your User Content contains copyrighted material that is not your original work, you must have obtained all necessary rights, licenses, consents, and permissions before using or disseminating that content. CineSurf takes no responsibility for User Content created, stored, or shared by users and acts only as a passive conduit for distribution.</p>
+  </section>
+
+  <!-- 4. Our Services -->
+  <section id="s4">
+    <div class="section-header">
+      <span class="section-num">04</span>
+      <h2>Our Services</h2>
+    </div>
+
+    <p>CineSurf provides you with a browser experience, YouTube film listing and discovery, download services, and other related features in accordance with this Agreement.</p>
+
+    <p>We use Google's related services (such as Google Analytics and Google Cloud) to analyze app usage and ensure compliance with their terms and privacy policies. Without your authorization and Google's authorization, we will not collect or process your personal information through Google services.</p>
+
+    <p>For more information, refer to <a href="https://www.google.com/policies/privacy/partners/" target="_blank">How Google uses data when you use our partners' sites or apps</a>.</p>
+  </section>
+
+  <!-- 5. Fees -->
+  <section id="s5">
+    <div class="section-header">
+      <span class="section-num">05</span>
+      <h2>Fees, Payment &amp; Invoice</h2>
+    </div>
+
+    <div class="callout">
+      CineSurf is <strong>free to use</strong> unless you choose to subscribe to member services via Google Play. All fee and payment matters follow the Google Play Terms of Service.
+    </div>
+
+    <p>Subscriptions automatically renew and fees are charged according to your chosen plan after any trial period, unless canceled. You may manage or cancel your subscription at any time via Google Play Subscriptions. To avoid renewal, turn off auto-renewal at least 24 hours before the current subscription period ends.</p>
+
+    <p>Refunds for the current billing period are not provided except as outlined in Google Play's Refund Policy. CineSurf reserves the right to request additional fees for any damage caused by misuse of our Services.</p>
+  </section>
+
+  <!-- 6. Limitation of Liability -->
+  <section id="s6">
+    <div class="section-header">
+      <span class="section-num">06</span>
+      <h2>Limitation of Liability</h2>
+    </div>
+
+    <p>To the extent permitted by applicable law, CineSurf shall not be liable for:</p>
+
+    <ul class="policy-list">
+      <li>Losses that could not reasonably be expected to arise from our negligence or breach of this Agreement</li>
+      <li>Losses relating to your business or any third party's business</li>
+      <li>Costs, fees, or liabilities suffered by anyone other than you in connection with your use of our Services</li>
+    </ul>
+
+    <p>Where we are liable to you, our liability is limited to an amount equal to the service fee you have paid for the corresponding Services in aggregate.</p>
+  </section>
+
+  <!-- 7. Miscellaneous -->
+  <section id="s7">
+    <div class="section-header">
+      <span class="section-num">07</span>
+      <h2>Miscellaneous</h2>
+    </div>
+
+    <p>CineSurf may contain links to third-party websites. We are not responsible for the accuracy, completeness, or reliability of any information on those websites. Visiting any linked third-party site is solely at your own risk.</p>
+
+    <p>If any provision of this Agreement is found to be illegal, invalid, or unenforceable under applicable law, that provision alone shall be deemed void without affecting the legality or enforceability of the remaining provisions.</p>
+
+    <p><strong>Indemnity:</strong> You agree to indemnify CineSurf and its officers, directors, and employees against all claims, actions, costs, expenses, damages, liabilities, or proceedings arising out of or in connection with your breach of this Agreement or your infringement of any third party's rights.</p>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p style="margin-bottom:8px;font-family:'Playfair Display',serif;font-size:1rem;color:var(--heading);">CineSurf</p>
+  <p>© 2026 CineSurf. All rights reserved. &nbsp;·&nbsp; <a href="mailto:supportdev@gmail.com">Contact Legal</a></p>
+</footer>
+
+<script>
+  // Intersection Observer for fade-in
+  const els = document.querySelectorAll('section, .toc');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08 });
+  els.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
